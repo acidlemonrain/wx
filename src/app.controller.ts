@@ -14,8 +14,10 @@ export class AppController {
 	}
 
 	@Post()
-	postMessage(@Body() body) {
+	postMessage(@Body() body, @Req() req) {
 		console.log(body);
+		console.log('req', req);
+
 		console.log('wechat msg posting');
 	}
 }
