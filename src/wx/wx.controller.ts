@@ -5,5 +5,6 @@ export class WxController {
 	@Get()
 	get(@Req() req) {
 		console.log(req);
+		console.log('wechat is coming');
 	}
 }
