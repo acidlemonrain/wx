@@ -1,4 +1,4 @@
-import { Controller, Get, Req } from '@nestjs/common';
+import { Controller, Get, Req, Post, Body } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -11,5 +11,11 @@ export class AppController {
 
 		console.log('wechat is coming');
 		return req.query.echostr;
+	}
+
+	@Post()
+	postMessage(@Body() body) {
+		console.log(body);
+		console.log('wechat msg posting');
 	}
 }
