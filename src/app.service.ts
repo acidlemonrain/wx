@@ -1,10 +1,10 @@
-import { Injectable, Param } from '@nestjs/common';
+import { Injectable, Param, Res, Req } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-	getHello(@Param('token') token): string {
+	getHello(@Req() req): string {
 		console.log('微信服务器get');
-		console.log('token:', token);
+		console.log(req);
 
 		return 'hello wordl';
 	}
