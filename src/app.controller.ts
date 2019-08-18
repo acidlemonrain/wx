@@ -16,7 +16,10 @@ export class AppController {
 	@Post()
 	postMessage(@Body() body, @Req() req) {
 		console.log(body);
-		console.log('req', req);
+		req.setEncoding('utf8');
+		req.on('data', function(chunk) {
+			console.log('BODY: ' + chunk);
+		});
 
 		console.log('wechat msg posting');
 	}
