@@ -7,7 +7,9 @@ export class AppController {
 
 	@Get()
 	get(@Req() req) {
-		console.log(req);
+		console.log(req.query);
+
 		console.log('wechat is coming');
+		return req.query.echostr;
 	}
 }
